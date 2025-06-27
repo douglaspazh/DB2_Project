@@ -1,0 +1,52 @@
+﻿@model DB2_Project.Models.Productor
+
+@{
+	ViewBag.Title = "Registrar Productor";
+}
+
+<h1>Registrar Productor</h1>
+<hr />
+
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Registrar" method="post">
+			<div class="form-group">
+				<label asp-for="ProductorID"></label>
+				<input asp-for="ProductorID" class="form-control" />
+				<span asp-validation-for="ProductorID" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Nombre"></label>
+				<input asp-for="Nombre" class="form-control" />
+				<span asp-validation-for="Nombre" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Direccion"></label>
+				<input asp-for="Direccion" class="form-control" />
+				<span asp-validation-for="Direccion" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Telefono"></label>
+				<input asp-for="Telefono" class="form-control" />
+				<span asp-validation-for="Telefono" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Email"></label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Estado"></label>
+				<input asp-for="Estado" class="form-control" />
+				<span asp-validation-for="Estado" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Registrar" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>
