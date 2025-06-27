@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DB2_Project.Models
 {
     [Table("Productor", Schema = "dbo")]
+    [PrimaryKey(nameof(ProductorID))]
     public class Productor
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductorID { get; set; }
 
         [Required]
