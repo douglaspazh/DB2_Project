@@ -11,6 +11,8 @@ namespace DB2_Project.Data
         }
 
         public DbSet<Productor> Productores { get; set; }
+        public DbSet<Finca> Fincas { get; set; }
+        public DbSet<Lote> Lotes { get; set; }
         
     }
 }
