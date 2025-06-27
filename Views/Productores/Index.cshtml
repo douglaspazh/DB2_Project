@@ -8,6 +8,7 @@
 	<h1 style="display: inline;">Lista de Productores</h1>
 	<a asp-action="Registrar" class="btn btn-primary" style="float: right;">Registrar Nuevo Productor</a>
 </div>
+
 <hr />
 
 <div class="row">
@@ -17,7 +18,6 @@
 				<tr>
 					<th>ProductorID</th>
 					<th>Nombre</th>
-					<th>Direccion</th>
 					<th>Telefono</th>
 					<th>Email</th>
 					<th>Estado</th>
@@ -31,7 +31,6 @@
 					<tr>
 						<td>@productor.ProductorID</td>
 						<td>@productor.Nombre</td>
-						<td>@productor.Direccion</td>
 						<td>@productor.Telefono</td>
 						<td>@productor.Email</td>
 						<td>@productor.Estado</td>

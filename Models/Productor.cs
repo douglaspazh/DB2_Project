@@ -6,14 +6,13 @@ namespace DB2_Project.Models
     [Table("Productor", Schema = "dbo")]
     public class Productor
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductorID { get; set; }
 
         [Required]
         [MaxLength(100)]
         public string Nombre { get; set; }
-
-        [Required]
-        public string Direccion { get; set; }
         
         [Required]
         public string Telefono { get; set; }

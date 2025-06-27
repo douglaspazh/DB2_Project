@@ -14,6 +14,7 @@ namespace DB2_Project.Controllers
             _context = context;
         }
 
+        // GET: Productores
         public async Task<IActionResult> Index()
         {
             var productores = await _context.Productores.ToListAsync();
