@@ -10,6 +10,7 @@ namespace DB2_Project.Data
         {
         }
 
-
+        public DbSet<Productor> Productores { get; set; }
+        
     }
 }

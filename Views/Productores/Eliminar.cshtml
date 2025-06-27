@@ -1,0 +1,29 @@
+﻿@model DB2_Project.Models.Productor
+
+@{
+	ViewBag.Title = "EliminarProductor";
+}
+
+<h1>Eliminar Productor</h1>
+<hr />
+
+<h3>¿Estás seguro de que deseas eliminar al productor @Model.Nombre?</h3>
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Eliminar" method="post">
+			<input type="hidden" asp-for="ProductorID" />
+			<div class="form-group">
+				<label asp-for="Nombre"></label>
+				<input asp-for="Nombre" class="form-control" readonly />
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Confirmar Eliminación" class="btn btn-danger" />
+				<a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DB2_Project.Models.Productor>;
+
+@{
+	ViewBag.Title = "Productores";
+}
+
+<div>
+	<h1 style="display: inline;">Lista de Productores</h1>
+	<a asp-action="Registrar" class="btn btn-primary" style="float: right;">Registrar Nuevo Productor</a>
+</div>
+<hr />
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ProductorID</th>
+					<th>Nombre</th>
+					<th>Direccion</th>
+					<th>Telefono</th>
+					<th>Email</th>
+					<th>Estado</th>
+					<th>Fecha Registro</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var productor in Model)
+				{
+					<tr>
+						<td>@productor.ProductorID</td>
+						<td>@productor.Nombre</td>
+						<td>@productor.Direccion</td>
+						<td>@productor.Telefono</td>
+						<td>@productor.Email</td>
+						<td>@productor.Estado</td>
+						<td>@productor.FechaRegistro.ToString( "dd/MM/yyyy" )</td>
+						<td>
+							<a asp-action="Editar" asp-route-id="@productor.ProductorID" class="btn btn-warning">Editar</a>
+							<a asp-action="Eliminar" asp-route-id="@productor.ProductorID" class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
