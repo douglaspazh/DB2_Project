@@ -1,0 +1,45 @@
+﻿@model List<DB2_Project.Models.Finca>;
+
+@{
+	ViewBag.Title = "Fincas";
+}
+
+<div>
+	<h1 style="display: inline;">Lista de Fincas</h1>
+	<a asp-action="Registrar" class="btn btn-primary" style="float: right;">Registrar Nueva Finca</a>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>FincaID</th>
+					<th>Nombre</th>
+					<th>Productor</th>
+					<th>Direccion</th>
+					<th>Fecha Registro</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var finca in Model)
+				{
+					<tr>
+						<td>@finca.FincaID</td>
+						<td>@finca.Nombre</td>
+						<td>@finca.Productor?.Nombre</td>
+						<td>@finca.Direccion</td>
+						<td>@finca.FechaRegistro.ToString("dd/MM/yyyy")</td>
+						<td>
+							<a asp-action="Editar" asp-route-id="@finca.FincaID" class="btn btn-warning">Editar</a>
+							<a asp-action="Eliminar" asp-route-id="@finca.FincaID" class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

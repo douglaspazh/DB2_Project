@@ -1,0 +1,33 @@
+﻿@model DB2_Project.Models.Finca
+
+@{
+	ViewBag.Title = "Editar Finca";
+}
+
+<h1>Editar Finca</h1>
+<hr />
+
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Editar" method="post">
+			<input type="hidden" asp-for="FincaID" />
+			<div class="form-group">
+				<label asp-for="Nombre"></label>
+				<input asp-for="Nombre" class="form-control" />
+				<span asp-validation-for="Nombre" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Direccion"></label>
+				<input asp-for="Direccion" class="form-control" />
+				<span asp-validation-for="Direccion" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>
